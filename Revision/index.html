@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+function Nav(){
+    return (
+        <>
+        <h1>This is the nav bar</h1>
+        <button>search</button>
+        </>
+    )
+}
+
+function Contained(){
+    let arr=["mango","kiwi","banana","orange","grapes","apple"]
+    return (
+    <ul>
+        {
+            arr.map((ele,i)=>{
+                return (
+                    <li key={i}>{ele}</li>
+                )
+            })
+        }
+    </ul>
+)
+}
+function Footer(){
+    return (
+    <>
+        <h1>This is the footer</h1>
+        <p>All rights reserved</p>
+    </>
+)
+}
+   function App(){
+    return <>
+      <Nav/>
+      <Contained/>
+      <Footer/>
+    </>
+   } 
+const root=ReactDOM.createRoot(document.querySelector("#container"))
+root.render(<App/>)
+</script>
